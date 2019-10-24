@@ -1,6 +1,6 @@
 import { Axis } from "./axis";
 
-export class Object extends Axis {
+export class Actor extends Axis {
   protected width: number;
   protected height: number;
   protected xspeed: number;
