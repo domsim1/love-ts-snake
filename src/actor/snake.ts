@@ -91,6 +91,10 @@ export class Snake extends Actor implements ILoop {
     this.tailBlocks.unshift(new Axis(this.x, this.y));
   }
 
+  public isDead(): boolean {
+    return this.isSnakeDead;
+  }
+
   private keypressed(key: KeyConstant): void {
     switch (key) {
       case "up":

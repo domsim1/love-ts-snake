@@ -25,6 +25,9 @@ export class Maestro implements ILoop {
   }
 
   public update(dt: number): void {
+    if (this.snake.isDead()) {
+      return;
+    }
     this.apple.update(dt);
     this.snake.update(dt);
 
@@ -52,6 +55,14 @@ export class Maestro implements ILoop {
     this.snake.draw();
     this.drawHUD();
     this.drawScore();
+  }
+
+  public getScore(): number {
+    return this.score;
+  }
+
+  public isGameover(): boolean {
+    return this.snake.isDead();
   }
 
   private increaseScoreBy(amount: number): void {

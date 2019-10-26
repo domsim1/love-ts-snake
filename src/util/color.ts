@@ -1,4 +1,5 @@
 export enum Color {
+  Blank,
   White,
   Purple,
   Red,
@@ -6,6 +7,9 @@ export enum Color {
 
 export function setColor(color: Color): void {
   switch (color) {
+    case Color.Blank:
+      love.graphics.setColor(0, 0, 0, 0);
+      break;
     case Color.White:
       love.graphics.setColor(1, 1, 1, 1);
       break;
