@@ -89,6 +89,11 @@ export class Snake extends Actor implements ILoop {
 
   public grow(): void {
     this.tailBlocks.unshift(new Axis(this.x, this.y));
+    if (this.tickRate >= 0.0) {
+      this.tickRate -= 0.001;
+    } else {
+      this.tickRate = 0.0;
+    }
   }
 
   public isDead(): boolean {
